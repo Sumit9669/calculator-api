@@ -15,12 +15,10 @@ app.use(bodyParser.json());
 // here
 
 app.use("/add", (req, res, next) => {
-  console.log(req.body.num1);
-
   if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
       status: "error",
-      message: "invalid data type"
+      message: "Invalid data types"
     });
   } else if (
     Number(req.body.num1) > 1000000 ||
@@ -36,7 +34,7 @@ app.use("/add", (req, res, next) => {
     let result = num1 + num2;
     res.json({
       status: "success",
-      message: "the sum of given two number",
+      message: "the sum of given two numbers",
       sum: result
     });
   }
@@ -46,7 +44,7 @@ app.use("/sub", (req, res, next) => {
   if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
       status: "error",
-      message: "invalid data type"
+      message: "Invalid data types"
     });
   } else if (
     Number(req.body.num1) < 1000000 ||
@@ -62,7 +60,7 @@ app.use("/sub", (req, res, next) => {
     let result = num1 - num2;
     res.json({
       status: "success",
-      message: "the difference of given two number",
+      message: "the difference of given two numbers",
       sum: result
     });
   }
@@ -72,7 +70,7 @@ app.use("/multiply", (req, res, next) => {
   if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
       status: "error",
-      message: "invalid data type"
+      message: "Invalid data types"
     });
   } else if (
     Number(req.body.num1) > 1000000 ||
@@ -88,14 +86,13 @@ app.use("/multiply", (req, res, next) => {
     let result = num1 * num2;
     res.json({
       status: "success",
-      message: "the product of given two number",
+      message: "The product of given numbers",
       sum: result
     });
   }
 });
 
 app.use("/division", (req, res, next) => {
-  console.log(req.body.num1);
   if (Number(req.body.num2 === 0)) {
     res.json({
       status: "faliure",
