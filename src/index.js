@@ -13,7 +13,9 @@ app.use(bodyParser.json());
 // your code goes here
 
 // here
-
+app.get("/", (req, res, next) => {
+  res.send("Hello world!");
+});
 app.use("/add", (req, res, next) => {
   if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
