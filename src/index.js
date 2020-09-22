@@ -53,7 +53,7 @@ app.use("/sub", (req, res, next) => {
     Number(req.body.num2) < 1000000
   ) {
     res.json({
-      status: "faliure",
+      status: "error",
       message: "Underflow"
     });
   } else {
