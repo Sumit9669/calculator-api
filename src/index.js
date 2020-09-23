@@ -47,9 +47,11 @@ app.use("/sub", (req, res, next) => {
       status: "error",
       message: "Invalid data types"
     });
-  } else if (Number(req.body.num1) <= x || Number(req.body.num2) <= x) {
-    res.json({
-      status: "error",
+  } else if (
+    Number(req.body.num1) <= -1000000 ||
+    Number(req.body.num2) <= -1000000
+  ) {
+    res.status(200).json({
       message: "Underflow"
     });
   } else {
