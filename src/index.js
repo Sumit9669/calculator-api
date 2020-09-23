@@ -92,7 +92,7 @@ app.use("/multiply", (req, res, next) => {
   }
 });
 
-app.use("/division", (req, res, next) => {
+app.use("/divide", (req, res, next) => {
   if (Number(req.body.num2) === Number(0)) {
     res.json({
       status: "error",
