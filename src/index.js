@@ -96,7 +96,7 @@ app.use("/divide", (req, res, next) => {
   if (Number(req.body.num2) === Number(0)) {
     res.json({
       status: "error",
-      message: "cannot divide by 0"
+      message: "Cannot divide by zero"
     });
   } else {
     let num1 = Number(req.body.num1);
