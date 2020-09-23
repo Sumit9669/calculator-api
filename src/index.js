@@ -55,11 +55,10 @@ app.use("/sub", (req, res, next) => {
   } else {
     let num1 = Number(req.body.num1);
     let num2 = Number(req.body.num2);
-    let result = num1 - num2;
-    res.json({
-      status: "success",
+    let result1 = num1 - num2;
+    res.status(200).json({
       message: "the difference of given two numbers",
-      sum: result
+      result: result1
     });
   }
 });
