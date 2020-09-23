@@ -89,6 +89,7 @@ app.use("/multiply", (req, res, next) => {
       message: "The product of given numbers",
       result: result1
     });
+    next();
   }
 });
 
