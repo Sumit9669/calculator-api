@@ -21,7 +21,7 @@ app.use("/add", (req, res, next) => {
   if (typeof req.body.num1 == "string" && typeof req.body.num2 == "string") {
     res.json({
       status: "error",
-      message: "Invalid data types"
+      message: "invalid data types"
     });
   } else if (Number(req.body.num1) > x && Number(req.body.num2) > x) {
     res.json({
@@ -45,7 +45,7 @@ app.use("/sub", (req, res, next) => {
   if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
       status: "error",
-      message: "Invalid data types"
+      message: "invalid data types"
     });
   } else if (Number(req.body.num1) < x || Number(req.body.num2) < x) {
     res.json({
