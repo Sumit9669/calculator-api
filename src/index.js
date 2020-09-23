@@ -89,9 +89,9 @@ app.use("/multiply", (req, res, next) => {
 });
 
 app.use("/division", (req, res, next) => {
-  if (Number(req.body.num2 === 0)) {
+  if (Number(req.body.num2) === 0) {
     res.json({
-      status: "faliure",
+      status: "error",
       message: "cannot divide by 0"
     });
   } else {
