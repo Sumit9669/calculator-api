@@ -18,20 +18,23 @@ app.get("/", (req, res, next) => {
 });
 app.use("/add", (req, res, next) => {
   let x = Number(1000000);
+  let num1 = Number(req.body.num1);
+  let num2 = Number(req.body.num2);
+  let result = num1 + num2;
   if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
       status: "error",
       message: "Invalid data types"
     });
-  } else if (Number(req.body.num1) >= x || Number(req.body.num2) >= x) {
-    res.json({
-      status: "error",
+  } else if (
+    Number(req.body.num1) >= x ||
+    Number(req.body.num2) >= x ||
+    result >= 1000000
+  ) {
+    res.status(200).json({
       message: "Overflow"
     });
   } else {
-    let num1 = Number(req.body.num1);
-    let num2 = Number(req.body.num2);
-    let result = num1 + num2;
     res.json({
       status: "success",
       message: "the sum of given two numbers",
