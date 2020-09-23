@@ -69,7 +69,7 @@ app.use("/multiply", (req, res, next) => {
   if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
       status: "error",
-      message: "invalid data types"
+      message: "Invalid data types"
     });
   } else if (
     Number(req.body.num1) > x ||
