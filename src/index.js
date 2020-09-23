@@ -21,7 +21,7 @@ app.use("/add", (req, res, next) => {
   if (typeof req.body.num1 == "string" && typeof req.body.num2 == "string") {
     res.json({
       status: "error",
-      message: "invalid data types"
+      message: "Invalid data types"
     });
   } else if (Number(req.body.num1) > x && Number(req.body.num2) > x) {
     res.json({
@@ -45,7 +45,7 @@ app.use("/sub", (req, res, next) => {
   if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
       status: "error",
-      message: "invalid data types"
+      message: "Invalid data types"
     });
   } else if (Number(req.body.num1) < x || Number(req.body.num2) < x) {
     res.json({
@@ -87,14 +87,13 @@ app.use("/multiply", (req, res, next) => {
     res.json({
       status: "success",
       message: "The product of given numbers",
-      result: result1
+      sum: result1
     });
-    next();
   }
 });
 
 app.use("/division", (req, res, next) => {
-  if (Number(req.body.num2) === 0) {
+  if (Number(req.body.num2) === Number(0)) {
     res.json({
       status: "error",
       message: "cannot divide by 0"
