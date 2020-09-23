@@ -79,11 +79,11 @@ app.use("/multiply", (req, res, next) => {
   } else {
     let num1 = Number(req.body.num1);
     let num2 = Number(req.body.num2);
-    let result = num1 * num2;
+    let result1 = num1 * num2;
     res.json({
       status: "success",
       message: "The product of given numbers",
-      sum: result
+      result: result1
     });
   }
 });
