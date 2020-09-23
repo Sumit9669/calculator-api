@@ -69,30 +69,22 @@ app.use("/sub", (req, res, next) => {
 });
 
 app.use("/multiply", (req, res, next) => {
-  let x = Number(1000000);
-  let mul = Number(req.body.num1) * Number(req.body.num12);
+  let num1 = req.body.num1;
+  let num2 = req.body.num2;
   if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
       status: "error",
       message: "Invalid data types"
     });
-  } else if (
-    Number(req.body.num1) > x ||
-    Number(req.body.num2) > x ||
-    mul > x
-  ) {
-    res.status(200).json({
-      message: "Overflow"
-    });
-  } else {
-    let num1 = Number(req.body.num1);
-    let num2 = Number(req.body.num2);
-    let result1 = num1 * num2;
-    res.status(200).json({
-      message: "The product of given numbers",
-      result: result1
-    });
   }
+  let mul = num1 * num2;
+  if (num1 >= 1000000 || num2 >= 1000000 || mul > 1000000) {
+    return res.status(200).json({ message: "Overflow" });
+  }
+
+  res
+    .status(200)
+    .json({ message: "The product of given numbers", result: mul });
 });
 
 app.use("/divide", (req, res, next) => {
