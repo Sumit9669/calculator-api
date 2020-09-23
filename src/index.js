@@ -60,7 +60,7 @@ app.use("/sub", (req, res, next) => {
     let result1 = num1 - num2;
     res.status(200).json({
       message: "the difference of given two numbers",
-      result: result1
+      difference: result1
     });
   }
 });
