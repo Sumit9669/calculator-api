@@ -18,12 +18,12 @@ app.get("/", (req, res, next) => {
 });
 app.use("/add", (req, res, next) => {
   let x = Number(1000000);
-  if (typeof req.body.num1 == "string" && typeof req.body.num2 == "string") {
+  if (typeof req.body.num1 == "string" || typeof req.body.num2 == "string") {
     res.json({
       status: "error",
       message: "Invalid data types"
     });
-  } else if (Number(req.body.num1) > x && Number(req.body.num2) > x) {
+  } else if (Number(req.body.num1) > x || Number(req.body.num2) > x) {
     res.json({
       status: "error",
       message: "Overflow"
