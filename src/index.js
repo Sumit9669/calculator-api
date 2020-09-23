@@ -71,7 +71,11 @@ app.use("/multiply", (req, res, next) => {
       status: "error",
       message: "invalid data types"
     });
-  } else if (Number(req.body.num1) > x || Number(req.body.num2) > x) {
+  } else if (
+    Number(req.body.num1) > x ||
+    Number(req.body.num2) > x ||
+    Number(req.body.num1) * Number(req.body.num12) > x
+  ) {
     res.json({
       status: "error",
       message: "Overflow"
