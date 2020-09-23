@@ -47,12 +47,12 @@ app.use("/sub", (req, res, next) => {
       status: "error",
       message: "Invalid data types"
     });
-  } /*else if (Number(req.body.num1) < x || Number(req.body.num2) < x) {
+  } else if (Number(req.body.num1) < x || Number(req.body.num2) < x) {
     res.json({
       status: "error",
       message: "Underflow"
     });
-  } */else {
+  } else {
     let num1 = Number(req.body.num1);
     let num2 = Number(req.body.num2);
     let result = num1 - num2;
