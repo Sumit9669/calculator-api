@@ -86,7 +86,7 @@ app.use("/multiply", (req, res, next) => {
     let result1 = num1 * num2;
     res.status(200).json({
       message: "The product of given numbers",
-      sum: result1
+      result: result1
     });
   }
 });
@@ -100,11 +100,10 @@ app.use("/divide", (req, res, next) => {
   } else {
     let num1 = Number(req.body.num1);
     let num2 = Number(req.body.num2);
-    let result = num1 / num2;
-    res.json({
-      status: "success",
+    let result1 = num1 / num2;
+    res.status(200).json({
       message: "The division of given numbers",
-      sum: result
+      result: result1
     });
   }
 });
